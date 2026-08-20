@@ -114,7 +114,8 @@ body {
 
 .img img {
   width: 100%;
-  height: 400px;
+  height: auto;
+  max-height: 400px;
   object-fit: cover;
   border-radius: 20px;
 }
@@ -157,25 +158,36 @@ body {
   margin-bottom: 12px;
 }
 
+/* --- تعديل قسم Our Process المطلوب --- */
 .process {
   background: rgba(95, 51, 51, 0.08);
-  padding: 50px;
+  padding: 60px 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.process-text {
+  flex: 1;
+  max-width: 350px;
+}
+
+.process-text h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
 }
 
 .process-cards {
   display: flex;
-  gap: 25px;
+  gap: 20px;
+  flex: 2;
+  justify-content: flex-end;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .process-card {
-  width: 350px;
+  width: 280px;
   background: #fff;
   border-radius: 15px;
   overflow: hidden;
@@ -184,7 +196,7 @@ body {
 
 .process-card img {
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: cover;
   display: block;
 }
@@ -230,10 +242,8 @@ body {
 .footer-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
   flex: 1;
   min-width: 280px;
-  text-align: center;
 }
 
 .footer-info p {
@@ -248,7 +258,6 @@ body {
   gap: 10px;
   font-weight: 500;
   margin-bottom: 10px;
-  text-align: center;
 }
 
 .footer-icon {
@@ -293,6 +302,21 @@ body {
   color: rgba(255, 255, 255, 0.7);
 }
 
+@media (max-width: 992px) {
+  .process {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .process-text {
+    max-width: 100%;
+  }
+
+  .process-cards {
+    justify-content: center;
+  }
+}
+
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -327,11 +351,6 @@ body {
     padding: 30px 20px;
   }
 
-  .process {
-    flex-direction: column;
-    text-align: center;
-  }
-
   .card,
   .process-card,
   .choose-card {
@@ -343,6 +362,7 @@ body {
     flex-direction: column;
     align-items: center;
   }
+
   .footer-info {
     align-items: center;
     text-align: center;
